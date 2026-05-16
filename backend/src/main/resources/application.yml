@@ -1,0 +1,23 @@
+server:
+  port: 8002
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+spring:
+  application:
+    name: data-import-system
+  servlet:
+    multipart:
+      enabled: true
+
+task:
+  cleanup:
+    cron: "0 0 2 * * ?"
+    expire-hours: 24
+
+import:
+  queue:
+    max-concurrent: 2
+    large-file-threshold: 10485760
